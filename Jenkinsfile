@@ -24,10 +24,12 @@ pipeline {
                 }
             }
         }
-        stage('build image') {
+        stage('build and push image') {
             steps {
                 script {
-                    buildImage 'cshrma/demo-app:jma-2.0'
+                    buildImage 'cshrma/demo-app:jma-3.0'
+                    dockerLogin()
+                    dockerPush 'cshrma/demo-app:jma-3.0'
                    }
                 }
             }
