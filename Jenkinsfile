@@ -36,11 +36,7 @@ pipeline {
                 }
             }
         stage('deploy') {
-                        when {
-                expression {
-                    BRANCH_NAME =='master'
-                }
-                        }
+
             steps {
                 script {
                     gv.deployApp()
