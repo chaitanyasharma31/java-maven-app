@@ -17,11 +17,7 @@ pipeline {
             }
         }
         stage('build jar') {
-            when {
-                expression {
-                    BRANCH_NAME =='jenkins-jobs'
-                }
-            }
+
             steps {
                 script {
                     buildJar()
@@ -31,16 +27,11 @@ pipeline {
         stage('build image') {
             steps {
                 script {
-                    buildImage()
+                    buildImage 'cshrma/demo-app:jma-2.0'
                    }
                 }
             }
         stage('deploy') {
- when {
-                expression {
-                    BRANCH_NAME =='jenkins-jobs'
-                }
-                        }
             steps {
                 script {
                     gv.deployApp()
