@@ -48,8 +48,10 @@ pipeline {
         }
         stage('commit version update') {
             steps {
+sshagent(['ssh-github'])
+
                 script {
-                    withCredentials([sshUserPrivateKey(credentialsId: 'ssh-github', keyFileVariable: 'SSH_KEY')]) {
+                    // withCredentials([sshUserPrivateKey(credentialsId: 'ssh-github', keyFileVariable: 'SSH_KEY')]) {
                         // git config here for the first time run
                         sh 'git config --global user.email "c.shrma31@gmail.com"'
                         sh 'git config --global user.name "chaitanyasharma31"'
