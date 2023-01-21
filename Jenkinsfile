@@ -13,7 +13,7 @@ pipeline {
         maven 'Maven'
     }
     environment {
-        IMAGE_NAME = 'cshrma/java-maven-app:1.0'
+        IMAGE_NAME = 'cshrma/java-maven-app:2.0'
     }
     stages {
         stage('build app') {
