@@ -1,4 +1,4 @@
-version: '2.15.1'
+version: '3.8'
 services:
     jave-maven-app:
       image: cshrma/java-maven-app:1.0
@@ -6,9 +6,9 @@ services:
       - 8080:8080
     postgres:
     image: postgres:13
-    ports:
+    port:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=my-pwd 
+      - POSTGRES_PASSWORD:my-pwd 
 
     
