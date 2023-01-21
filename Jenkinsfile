@@ -46,7 +46,7 @@ pipeline {
                 //        sh "scp -o StrictHostKeyChecking=no server-cmds.sh ${ec2Instance}:/home/ec2-user"
                 //        sh "scp -o StrictHostKeyChecking=no docker-compose.yaml ${ec2Instance}:/home/ec2-user"
                 //        sh "ssh -o StrictHostKeyChecking=no ${ec2Instance} ${shellCmd}"
-                    def dockerCmd = 'docker run -p 3080:3080 -d cshrma/demo-app:1.0'
+                    def dockerCmd = "docker run -p 8080:8080 -d ${IMAGE_NAME}"
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@99.79.77.236 ${dockerCmd}"
                    }
