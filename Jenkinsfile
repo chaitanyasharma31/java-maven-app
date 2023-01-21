@@ -13,7 +13,7 @@ pipeline {
         maven 'Maven'
     }
     environment {
-        IMAGE_NAME = 'http://147.182.148.16:8081/repository/docker-hosted/v2/java-maven-app:1.1'
+        IMAGE_NAME = 'cshrma/java-maven-app:1.0'
     }
     stages {
         stage('build app') {
