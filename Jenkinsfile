@@ -2,7 +2,7 @@
 
 library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
     [$class: 'GitSCMSource',
-     remote: 'git@github.com:chaitanyasharma31/jenkins-shared-library.git',
+     remote: 'https://github.com/chaitanyasharma31/jenkins-shared-library.git',
      credentialsId: 'github-credentials'
     ]
 )
@@ -13,7 +13,7 @@ pipeline {
         maven 'Maven'
     }
     environment {
-        IMAGE_NAME = 'cshrma/demo-app:1.0'
+        IMAGE_NAME = 'http://147.182.148.16:8081/repository/docker-hosted/v2/java-maven-app:1.1'
     }
     stages {
         stage('build app') {
