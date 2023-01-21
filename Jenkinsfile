@@ -33,9 +33,9 @@ pipeline {
         stage('build and push image') {
             steps {
                 script {
-                    buildImage 'cshrma/demo-app:jma-3.0'
+                    buildImage 'cshrma/java-maven-app'
                     dockerLogin()
-                    dockerPush 'cshrma/demo-app:jma-3.0'
+                    dockerPush 'cshrma/java-maven-app'
                    }
                 }
             }
